@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+</head>
+<style>
+  body, html{
+    margin: 0;
+    padding: 0;
+  }
+  .item-frame{
+    width: 600px;
+    margin: 0 auto;
+    background: #999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 1em;
+    overflow: hidden;
+  }
+  .item{
+    width: 33%;
+    float: left;
+  }
+  .item span{
+    display: block;
+    margin: 10px;
+    font-size: 18px;
+    line-height: 3em;
+    text-align: center;
+    background: #f1f1f1;
+    border: 1px solid rgba(0,0,0,.3);
+  }
+  .pick{
+    background: rgba(0,0,0,0.8)!important;
+    color:#fff;
+  }
+</style>
+<body>
+  <h1>Easy color</h1>
+<div class="game-wrapper">
+  <div class="item-frame">
+    <div class="item"><span>1</span></div>
+    <div class="item"><span>2</span></div>
+    <div class="item"><span>3</span></div>
+    <div class="item"><span>4</span></div>
+    <div class="item"><span>5</span></div>
+    <div class="item"><span>6</span></div>
+    <div class="item"><span>7</span></div>
+    <div class="item"><span>8</span></div>
+    <div class="item"><span>9</span></div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+  jQuery(document).ready(function($){
+    $('.item-frame').find('.item').each(function(index){
+      $(this).find('span').attr('data-pick','active').addClass('pick').html(index+1);
+
+    });
+  })
+</script>
+</body>
+</html>
